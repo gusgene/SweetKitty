@@ -1,6 +1,7 @@
-﻿namespace UseCases
+﻿using System;
+namespace UseCases
 {
-    public class EntityNotFoundException
+    public class EntityNotFoundException : Exception
     {
         
     }

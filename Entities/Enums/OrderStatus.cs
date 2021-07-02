@@ -2,6 +2,8 @@
 {
     public enum OrderStatus
     {
-        
+        Created,
+        Completed,
+        Canceled
     }
 }

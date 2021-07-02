@@ -1,0 +1,26 @@
+version: '3'
+
+volumes:
+  db-data:
+
+services:
+  sweet_kitty:
+    image: postgres:11.3
+    ports:
+      - "5434:5432"
+    container_name: sweet_kitty
+    hostname: sweet_kitty
+    networks:
+      mnemo-network:
+        aliases:
+          - sweet_kitty
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=appDatabase
+  
+networks:
+  mnemo-network:
+    driver: "bridge"
